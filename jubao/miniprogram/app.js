@@ -4,7 +4,7 @@ App({
 
   data:{
     globalData:{ 
-      src:null,
+      src:[],
     },
   },
   onLaunch: function () {

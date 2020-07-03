@@ -16,7 +16,8 @@
         <text class=" left">照片：</text>
           <view class="right">
                 <!-- mode 图片显示属性  https://developers.weixin.qq.com/miniprogram/dev/component/image.html -->
-                <image hidden="{{src?flase:true}}" mode="aspectFill" src="{{src}}" class="img left"></image>
+                <image hidden="{{src.length>0?flase:true}}" mode="aspectFill" src="{{src}}" class="img left"></image>
+                <!-- <text>{{src}}</text> -->
 
             <view class="cameraBtn right" bindtap="takePhotoup">
                 <view class="iconfont icon-pingjiapaizhao"></view>

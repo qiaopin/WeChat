@@ -9,6 +9,7 @@ Page({
 
   },
 
+  // 拍照按钮点击事件
   takePhoto() {
     var that=this
     const ctx = wx.createCameraContext()

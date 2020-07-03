@@ -50,7 +50,7 @@ page{
 }
 form{
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .borde{
@@ -103,4 +103,5 @@ form{
 .img{
   width: 80px;
   height: 80px;
+  margin-right: 5px;
 }

@@ -14,13 +14,13 @@
       <view class="borde">
         <!-- 调取摄像头 -->
         <text class=" left">照片：</text>
-          <view class="right" wx:if="{{!src}}">
-            <view class="cameraBtn" bindtap="takePhotoup">
+          <view class="right">
+                <!-- mode 图片显示属性  https://developers.weixin.qq.com/miniprogram/dev/component/image.html -->
+                <image hidden="{{src?flase:true}}" mode="aspectFill" src="{{src}}" class="img left"></image>
+
+            <view class="cameraBtn right" bindtap="takePhotoup">
                 <view class="iconfont icon-pingjiapaizhao"></view>
             </view>
-          </view>
-          <view class="right" wx:else="{{!src}}">
-            <image mode="aspectFit" src="{{src}}" class="img"></image>
           </view>
       </view>
       <view class="borde subBtn">

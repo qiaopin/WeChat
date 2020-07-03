@@ -1,0 +1,31 @@
+<!--pages/form/form.wxml-->
+
+
+<view class="container">
+    <form catchsubmit="formSubmit">
+       <view class="borde">
+          <text class=" left">地址：</text>
+          <input class="right inp" name="input" placeholder="请输入举报地" />
+      </view>
+      <view class="borde">
+          <text class="left"> 描述：</text>
+          <textarea class="right desc" name="input" placeholder="请对违法行为进行详细描述" ></textarea>
+      </view>
+      <view class="borde">
+        <!-- 调取摄像头 -->
+        <text class=" left">照片：</text>
+          <view class="right" wx:if="{{!src}}">
+            <view class="cameraBtn" bindtap="takePhotoup">
+                <view class="iconfont icon-pingjiapaizhao"></view>
+            </view>
+          </view>
+          <view class="right" wx:else="{{!src}}">
+            <image mode="aspectFit" src="{{src}}" class="img"></image>
+          </view>
+      </view>
+      <view class="borde subBtn">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">上传</button>
+      </view>
+    </form>
+</view>
+

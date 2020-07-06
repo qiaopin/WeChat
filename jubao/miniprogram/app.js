@@ -6,6 +6,9 @@ App({
     globalData:{ 
       src:[],
     },
+    globalData:{
+      address:''
+    }
   },
   onLaunch: function () {
     

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#333",
+  "navigationBarTitleText": "拍照证明",
+  "navigationBarTextStyle": "white"
 }

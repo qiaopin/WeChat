@@ -7,7 +7,8 @@ Page({
    */
   data: {
     // src:app.globalData.src,
-    src:[]
+    src:[],
+    address:''
   },
 
   
@@ -22,7 +23,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
+    console.log( app.globalData.address);
     this.setData({
+      address:app.globalData.address,
       src:getApp().globalData.src
     })
     // var src=options.src 
@@ -32,6 +35,11 @@ Page({
   takePhotoup(){
     wx.navigateTo({
       url: '../camera/camera',
+   })
+  },
+  address(){
+    wx.navigateTo({
+      url: '../map/map',
    })
   },
   /**
@@ -45,7 +53,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(getApp().globalData.src)
   },
 
   /**

@@ -147,7 +147,7 @@ geocoder(e){
       // var longitude = res.location.lng-0.00314;
       var latitude = res.location.lat;
       var longitude = res.location.lng;
-      console.log(longitude,latitude)
+      console.log(longitude,latitude,e.detail.value.geocoder,e.detail.value.descript)
     },
     fail: function(error) {
       wx.showModal({        

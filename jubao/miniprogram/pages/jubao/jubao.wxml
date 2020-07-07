@@ -16,7 +16,7 @@
       </view>
       <view class="borde">
           <text class="left"> 描述：</text>
-          <textarea class="right desc" name="input" placeholder="{{holder}}" ></textarea>
+          <textarea class="right desc" name="descript" placeholder="{{holder}}" ></textarea>
       </view>
       <view class="borde">
         <!-- 调取摄像头 -->

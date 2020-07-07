@@ -7,14 +7,16 @@ Page({
       latitude: '',
       longitude:'',
       //  time: (new Date()).toString()
-      markers:[{
-        iconPath: "./timg.png",
-        id: 0,
-        latitude:'39.95933,',
-        longitude:'116.29845',
-        width: 50,
-        height: 50
-      }],
+      // markers: [{
+      //   iconPath: "./timg.png",
+      //   id: 0,
+      //   // latitude: 39.95933,
+      //   // longitude: 116.29845,
+      //   latitude: '',
+      //   longitude: '',
+      //   width: 50,
+      //   height: 50
+      // }]
       
     },
 　　onLoad:function() {
@@ -40,28 +42,38 @@ Page({
 
 
     },
+
+    // 回到当前按钮
     back:function(){
       var that = this
        //1、获取当前位置坐标
        wx.getLocation({
         type: 'gcj02',
         success: function (res) {
-          var markers= {
-            iconPath: "./timg.png",
+          var marker= [{
+            // iconPath: "./timg.png",
             id: 0,
             latitude:res.latitude,
             longitude:res.longitude,
-            width: 50,
-            height: 50
-          }
+            width: 25,
+            height: 30,
+            callout: { content: "当前您的位置",  
+              color: "#333",  
+              fontSize: "16",   
+               borderRadius: "10",  
+              bgColor: "#ffffff",  
+              padding: "10",  
+              display:"ALWAYS"  
+            }
+          }]
           that.setData({
                   longitude:res.longitude,
                   latitude:res.latitude,   
-                  markers:markers
+                  markers:marker
           })
-          // console.log(markers)
-          that.data.markers.longitude=that.data.longitude,
-          that.data.markers.latitude=that.data.latitude,
+          // that.data.markers[0].longitude=res.longitude,
+          // that.data.markers[0].latitude=res.latitude,
+           console.log(that.data.markers)
           //2、根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
           qqmapsdk.reverseGeocoder({
             location: {
@@ -69,7 +81,7 @@ Page({
               longitude: res.longitude
             },
             success: function (addressRes) {
-              // console.log(addressRes);
+              console.log(addressRes.result.location);
               app.globalData.address = addressRes.result.formatted_addresses.recommend;
               that.setData({
                 address:addressRes.result.formatted_addresses.recommend
@@ -79,11 +91,13 @@ Page({
         }
       })
     },
+
+    // 举报按钮
     tap:function(){
       // tap跳转页面
       wx.navigateTo({
-        url: '../form/form',
-        // url: '../camera/camera',
+        // url: '../form/form',
+        url: '../jubao/jubao',
      })
       // wx.showToast({
       //   title:'已完成点击',
@@ -101,6 +115,11 @@ Page({
       //   }
       // })
     },
+
+
+      /**
+   * 生命周期函数--监听页面显示
+   */
 
 
 

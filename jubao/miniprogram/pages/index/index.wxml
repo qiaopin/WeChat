@@ -8,7 +8,7 @@
     <button class="page-body-button" type="primary" bindtap="getLocation">获取位置</button>
     </view>
 </view> -->
-<map class="map-show" id="container" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" ></map>
+<map class="map-show" id="container" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
 <view class="back" bindtap="back">回到当前位置</view>
 <view class="tapbtn" bindtap="tap" >点我举报</view>
 </view>

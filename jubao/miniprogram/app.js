@@ -3,12 +3,7 @@ App({
   
 
   data:{
-    globalData:{ 
-      src:[],
-    },
-    globalData:{
-      address:''
-    }
+
   },
   onLaunch: function () {
     
@@ -26,6 +21,10 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      src:[],
+      address:''
+    }
+    // console.log(this.globalData.src)
   }
 })

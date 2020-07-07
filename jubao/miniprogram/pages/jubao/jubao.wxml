@@ -1,15 +1,22 @@
+<!--pages/jubao/jubao.wxml-->
 <!--pages/form/form.wxml-->
 
+<!-- 拍照层 -->
+<view class="alr" hidden="{{hidden}}">
+    <camera device-position="back" flash="off" binderror="error" class="camera"></camera>
+    <view class="btn" bindtap="takePhoto"></view>
+</view>
 
+<!-- 表单层 -->
 <view class="container">
-    <form catchsubmit="formSubmit">
+    <form bindsubmit="formSubmit">
        <view class="borde">
           <text class=" left">地址：</text>
-          <input class="right inp" name="input" placeholder="请输入举报地" value="{{address}}"></input>
+          <input class="right inp"  name="geocoder"  placeholder="请输入举报地" value="{{address}}"></input>
       </view>
       <view class="borde">
           <text class="left"> 描述：</text>
-          <textarea class="right desc" name="input" placeholder="请对违法行为进行详细描述" ></textarea>
+          <textarea class="right desc" name="input" placeholder="{{holder}}" ></textarea>
       </view>
       <view class="borde">
         <!-- 调取摄像头 -->
@@ -19,7 +26,9 @@
                
                 <!-- <image hidden="{{src.length>0?flase:true}}" mode="aspectFill" src="{{src}}" class="img left"></image> -->
                <view class="left img" wx:for="{{src}}" wx:key="idx"  wx:for-index="index">
-                 <image hidden="{{src.length>0?flase:true}}" mode="aspectFill" src="{{item}}" class="img left" data-index="{{index}}"></image>
+                 <image hidden="{{src.length>0?flase:true}}" mode="aspectFill" src="{{item}}" class="img1 left" data-index="{{index}}">
+                  <view class="del iconfont icon-guanbi" bindtap="del"  data-indexdel="{{index}}" ></view>
+                 </image>
                </view>
                
                
@@ -31,8 +40,9 @@
           </view>
       </view>
       <view class="borde subBtn">
-        <button style="margin: 30rpx 0;background:#FF5722;color:#fff"  formType="submit">上传</button>
+        <button style="margin: 30rpx 0;background:#FF5722;color:#fff"  formType="submit">提交</button>
       </view>
     </form>
+   
 </view>
 

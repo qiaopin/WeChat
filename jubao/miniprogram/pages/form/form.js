@@ -23,25 +23,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
-    console.log( app.globalData.address);
+    // console.log( app.globalData.address);
     this.setData({
       address:app.globalData.address,
       src:getApp().globalData.src
     })
+    // console.log( app.globalData.src);
     // var src=options.src 
   },
 
   
   takePhotoup(){
+    // console.log(1)
     wx.navigateTo({
+      // wx.redirectTo({
+      // wx.reLaunch({
       url: '../camera/camera',
    })
   },
-  address(){
-    wx.navigateTo({
-      url: '../map/map',
-   })
-  },
+ 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -66,7 +67,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    app.globalData.src=[]
   },
 
   /**

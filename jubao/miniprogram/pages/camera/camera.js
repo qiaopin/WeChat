@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    src:[]
   },
 // 拍照按钮
   takePhoto() {
@@ -15,7 +15,8 @@ Page({
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        app.globalData.src= res.tempImagePath
+        // console.log(app.globalData.src)
+        app.globalData.src.push(res.tempImagePath)
         wx.navigateTo({
           // url: '../form/form?src='+app.globalData.src,
           url: '../form/form',
